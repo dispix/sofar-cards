@@ -31,7 +31,7 @@ body {
 }
 
 .TabsContainer.hide {
-  transform: translateX(calc(38px - 100% - 50vw));
+  transform: translateX(calc(2em + 4px - 100% - 50vw));
 }
 
 .TabsContainer button {
@@ -43,9 +43,8 @@ body {
 }
 
 .TabsContainer .Toggle {
-  padding: 0;
+  padding: 1em;
   margin: 0;
-  width: 38px;
   text-align: center;
 }
 

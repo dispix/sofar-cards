@@ -23,11 +23,7 @@ const colors = [
   "#dc2626",
 ]
 
-type CardProps = {
-  children: ReactNode
-  color: string
-  phase: string
-}
+type CardProps = { children: ReactNode; color: string; phase: string }
 
 const Card = ({ children, color, phase }: CardProps) => (
   <div className="Card" style={{ backgroundColor: color }}>
@@ -39,7 +35,8 @@ const Card = ({ children, color, phase }: CardProps) => (
 export default function App() {
   /** Language */
   const contents = { en: contentEn, fr: contentFr }
-  type Lang = keyof typeof contents
+  type Content = typeof contents
+  type Lang = keyof Content
   const flags: Record<Lang, string> = { en: "🇬🇧", fr: "🇫🇷" }
   const [lang, setLang] = useState<Lang>("en")
   const content = contents[lang]

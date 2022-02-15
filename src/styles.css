@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  overflow: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.TabsContainer {
+  position: fixed;
+  width: fit-content;
+  max-width: 90vw;
+  bottom: 64px;
+  left: 50vw;
+  transform: translateX(-50%);
+  transform-origin: center;
+  transition: all ease-in 200ms;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 4px 4px 10px rgb(90, 90, 90);
+  display: flex;
+}
+
+.TabsContainer.hide {
+  transform: translateX(calc(38px - 100% - 50vw));
+}
+
+.TabsContainer button {
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+  padding: 16px 20px;
+  border-right: 1px solid rgb(225, 225, 225);
+}
+
+.TabsContainer .Toggle {
+  padding: 0;
+  margin: 0;
+  width: 38px;
+  text-align: center;
+}
+
+.Tabs {
+  flex: 1 1 fit-content;
+  display: flex;
+  overflow: auto;
+
+  background-image: 
+  /* Shadows */ linear-gradient(to right, white, white),
+    linear-gradient(to right, white, white),
+    /* Shadow covers */
+      linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+    linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+
+  background-position: left center, right center, left center, right center;
+  background-repeat: no-repeat;
+  background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.Tabs button:active,
+.TabsContainer .Toggle:active {
+  background-color: #ddd;
+}
+
+.Card {
+  margin: 8px;
+  box-sizing: border-box;
+  color: #eee;
+  width: calc(100vw - 16px);
+  height: calc(calc(var(--vh, 1vh) * 100) - 20px);
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  overflow: auto;
+  border-radius: 3px;
+}
+
+.Card .Phase {
+  color: white;
+  font-size: 1em;
+  padding: 0;
+  padding-left: 32px;
+}
+
+.Card h3,
+.Card p {
+  padding: 0.1em;
+  padding-left: 32px;
+  padding-right: 8px;
+}
+
+.Card h3 {
+  font-size: 5em;
+  margin: 0;
+  padding-top: 0.3em;
+  padding-bottom: 0.2em;
+}
+.Card p {
+  font-size: 2em;
+  padding-left: 32px;
+}
